@@ -18,5 +18,6 @@ jobs:
 
       - uses: azure/webapps-deploy@v3
         with:
+          package: "./dist"
           app-name: "asc-mono-app-dev"
           publish-profile: ${{ secrets.mono_dev }}
