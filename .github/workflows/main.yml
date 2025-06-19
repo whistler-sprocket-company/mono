@@ -14,7 +14,12 @@ jobs:
           node-version: latest
 
       - run: npm ci
-      - run: npm run build
+
+      - name: lint application
+        run: npm lint
+
+      - name: build application
+        run: npm run build
 
       - uses: azure/webapps-deploy@v3
         with:
