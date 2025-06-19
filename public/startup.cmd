@@ -1,1 +1,1 @@
-pm2 start /home/site/wwwroot --spa --no-daemon
+pm2 serve /home/site/wwwroot --spa --no-daemon
