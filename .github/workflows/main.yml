@@ -15,3 +15,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: "asc-mono-app-dev"
+          publish-profile: ${{ secrets.mono_dev }}
