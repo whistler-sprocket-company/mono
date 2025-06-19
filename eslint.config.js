@@ -3,11 +3,16 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import unicorn from "eslint-plugin-unicorn";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["dist", "**/*.d.ts"] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.strictTypeChecked],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.strictTypeChecked,
+      unicorn.configs["recommended"],
+    ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
